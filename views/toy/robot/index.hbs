@@ -1,0 +1,36 @@
+<a class="btn btn-primary mt-3" href="/">Back</a>
+<div class="container mt-3 mb-3">
+  <h1>Robot Management</h1>
+  <a href="/toy/robot/add" class="btn btn-success">Add</a>
+  <a
+    onclick="return confirm('Are you sure you want to delete all')"
+    href="/toy/robot//deleteall"
+    class="btn btn-danger"
+  >Delete all</a>
+  <table border="1" style="text-align:center"  >
+    <tr>
+      <th colspan="7" >Robot List</th>
+    </tr>
+    <tr>
+      <th>Image</th>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Menu</th>
+    </tr>
+    {{#each robot}}
+      <tr>
+        <th><img src="{{ image }}" width="200" height="300"></th>
+        <th>{{category}}</th>
+        <th>{{name}}</th>
+        <th>{{price}} vnd</th>
+        <th>{{quantity}}</th>
+        <th>
+            <a href="/toy/robot/edit/{{ _id }}" class="btn btn-warning">Edit</a> 
+            <a href="/toy/robot//delete/{{ _id }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
+        </th>
+      </tr>
+    {{/each}}
+  </table>
+</div>

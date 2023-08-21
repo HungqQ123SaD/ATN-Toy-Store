@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel='stylesheet' href='/stylesheets/admin.css' />
+</head>
+
+
+<body>
+  <div class="sidebar">
+    <img src="./images/hung.jpg" width="200" height="200" alt="don't know"> 
+    <a class="sidebar-link" href="/toy/robot/">Robot</a>
+    <a class="sidebar-link" href="/toy/rubik/">Rubik</a>
+    <a class="sidebar-link" href="/homepage/">Home Page</a>
+  </div>
+  <div class="content">
+    <h1>Welcome to ATN-TOY-STORE</h1>
+    <section class="section-content">
+    <div class="container">
+        <header class="section-heading">
+            <h3 class="section-title" >ATN</h3>
+        </header><!-- sect-heading -->
+
+        <div class="row">
+            {{#each robot }}
+                <div class="card card-product-grid">
+                    <a href="/index/detail/{{ _id }}" class="img-wrap"> <img src="{{ image }}" width="30px"> </a>
+                    <figcaption class="info-wrap">
+                        <a href="/index/detail/{{ _id }}" class="title">{{ name }}</a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price: {{ price }} vnd</li>
+                        </ul>
+                    </figcaption>
+                </div>
+            {{/each}}
+
+            {{#each rubik }}
+                <div class="card card-product-grid">
+                    <a href="/index/detail/{{ _id }}" class="img-wrap"> <img src="{{ image }}" width="30px"> </a>
+                    <figcaption class="info-wrap">
+                        <a href="/index/detail/{{ _id }}" class="title">{{ name }}</a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price: {{ price }} vnd</li>
+                        </ul>
+                    </figcaption>
+                </div>
+            {{/each}}
+        </div> <!-- container .//  -->
+    </div>
+</section>
+  </div>
+  
+</body>
+</html>

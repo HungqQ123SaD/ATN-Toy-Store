@@ -1,0 +1,57 @@
+<head>
+    <link href="/stylesheets/homepage.css" rel="stylesheet">
+</head>
+<section class="section-intro padding-y-sm">
+    <div class="container" style="text-align:center">
+        <div class="intro-banner-wrap">
+            <img src="https://i.ex-cdn.com/theinvestor.vn/files/content/2023/02/07/photo-7-16745745197401327130179-1519.jpg">
+        </div>
+    </div> <!-- container //  -->
+</section>
+
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION FEATURE END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content">
+    <div class="container">
+        <header class="section-heading">
+            <h3 class="section-title"style="text-align:center"> Products</h3>
+        </header><!-- sect-heading -->
+        <form action="/homepage/search" method="post">
+        <input
+          class="form-control mt-3"
+          type="search"
+          name="keyword"
+          placeholder="Search"
+          required
+        />  
+      </form>
+        <div class="row">
+            {{#each robot }}
+                <div class="card card-product-grid">
+                    <a href="/homepage/detail/{{ _id }}" class="img-wrap"> <img src="{{ image }}" width="30px"> </a>
+                    <figcaption class="info-wrap">
+                        <a href="/homepage/detail/{{ _id }}" class="title">{{ name }}</a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price: {{ price }} vnd</li>
+                        </ul>
+                    </figcaption>
+                </div>
+            {{/each}}
+
+            {{#each rubik }}
+                <div class="card card-product-grid">
+                    <a href="/homepage/detail/{{ _id }}" class="img-wrap"> <img src="{{ image }}" width="30px"> </a>
+                    <figcaption class="info-wrap">
+                        <a href="/homepage/detail/{{ _id }}" class="title">{{ name }}</a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price: {{ price }} vnd</li>
+                        </ul>
+                    </figcaption>
+                </div>
+            {{/each}}
+        </div> <!-- container .//  -->
+    </div>
+</section>

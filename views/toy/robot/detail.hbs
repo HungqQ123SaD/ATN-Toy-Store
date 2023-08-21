@@ -1,0 +1,32 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/detail.css">
+</head>
+<a class="btn btn-primary mt-3" href="/homepage">Back</a>
+<br>
+<a href=""></a>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="{{robot.image}}" />
+    </div>
+
+    <div class="col">
+      <h1>Product Information</h1>
+      <h5 class="mt-5">Category: {{robot.category}}</h5>
+      <h5>Model: {{robot.name}}</h5>
+      <h5>Price: {{robot.price}} vnd</h5>
+      <form action="/homepage/order" method="post">
+      <input
+          type="number"
+          name="quantity"
+          min="1"
+          max="{{ robot.quantity }}"
+          value="1"
+        />
+        <input type="hidden" name="id" value="{{ robot._id }}">
+        <input type="hidden" name="price" value="{{ robot.price }}">
+        <input type="submit" class="btn btn-primary" value="Order" />
+      </form>
+    </div>
+  </div>
+</div>
